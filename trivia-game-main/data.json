@@ -1,0 +1,239 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What does AD stand for in relation to Windows Operating Systems? ",
+            "correct_answer": "Active Directory",
+            "incorrect_answers": [
+                "Alternative Drive",
+                "Automated Database",
+                "Active Department"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "The very first recorded computer bug was a moth found inside a Harvard Mark II computer.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "When was the programming language C# released?",
+            "correct_answer": "2000",
+            "incorrect_answers": [
+                "1998",
+                "1999",
+                "2001"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "Linus Torvalds created Linux and Git.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What was the first commerically available computer processor?",
+            "correct_answer": "Intel 4004",
+            "incorrect_answers": [
+                "Intel 486SX",
+                "TMS 1000",
+                "AMD AM386"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What was the name given to Android 4.3?",
+            "correct_answer": "Jelly Bean",
+            "incorrect_answers": [
+                "Lollipop",
+                "Nutella",
+                "Froyo"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In web design, what does CSS stand for?",
+            "correct_answer": "Cascading Style Sheet",
+            "incorrect_answers": [
+                "Counter Strike: Source",
+                "Corrective Style Sheet",
+                "Computer Style Sheet"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of these is the name for the failed key escrow device introduced by the National Security Agency in 1993?",
+            "correct_answer": "Clipper Chip",
+            "incorrect_answers": [
+                "Enigma Machine",
+                "Skipjack",
+                "Nautilus"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Generally, which component of a computer draws the most power?",
+            "correct_answer": "Video Card",
+            "incorrect_answers": [
+                "Hard Drive",
+                "Processor",
+                "Power Supply"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which coding language was the #1 programming language in terms of usage on GitHub in 2015?",
+            "correct_answer": "JavaScript",
+            "incorrect_answers": [
+                "C#",
+                "Python",
+                "PHP"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
+            "correct_answer": "marquee",
+            "incorrect_answers": [
+                "scroll",
+                "move",
+                "slide"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "boolean",
+            "difficulty": "easy",
+            "question": "Time on Computers is measured via the EPOX System.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is known as the brain of the Computer?",
+            "correct_answer": "Central Processing Unit",
+            "incorrect_answers": [
+                "Motherboard",
+                "Graphics Processing Unit",
+                "Keyboard"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of these is not a key value of Agile software development?",
+            "correct_answer": "Comprehensive documentation",
+            "incorrect_answers": [
+                "Individuals and interactions",
+                "Customer collaboration",
+                "Responding to change"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the main CPU is the Sega Mega Drive \/ Sega Genesis?",
+            "correct_answer": "Motorola 68000",
+            "incorrect_answers": [
+                "Zilog Z80",
+                "Yamaha YM2612",
+                "Intel 8088"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What was the first company to use the term Golden Master?",
+            "correct_answer": "Apple",
+            "incorrect_answers": [
+                "IBM",
+                "Microsoft",
+                "Google"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What major programming language does Unreal Engine 4 use?",
+            "correct_answer": "C++",
+            "incorrect_answers": [
+                "Assembly",
+                "C#",
+                "ECMAScript"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of these is not a layer in the OSI model for data communications?",
+            "correct_answer": "Connection Layer",
+            "incorrect_answers": [
+                "Application Layer",
+                "Transport Layer",
+                "Physical Layer"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What does the &#039;S&#039; in the RSA encryption algorithm stand for?",
+            "correct_answer": "Shamir",
+            "incorrect_answers": [
+                "Secure",
+                "Schottky",
+                "Stable"
+            ]
+        },
+        {
+            "category": "Science: Computers",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which kind of algorithm is Ron Rivest not famous for creating?",
+            "correct_answer": "Secret sharing scheme",
+            "incorrect_answers": [
+                "Hashing algorithm",
+                "Asymmetric encryption",
+                "Stream cipher"
+            ]
+        }
+    ]
+}
