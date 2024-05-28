@@ -62,7 +62,10 @@ def aces_adjust(hand: list, score: int):
     for card in hand:
         new_score += card["value"]
     return new_score
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 deck = []
 card = {}
 
@@ -113,9 +116,18 @@ while game_start:
                 player_sum = aces_adjust(player_hand, player_sum)
                 
             print(f"{players_info[1]}\nPlayer sum is {player_sum}")
+<<<<<<< HEAD
             if player_sum == 21 or player_sum > 21:
                 hit = "b"
                 dealer_draw = True
+=======
+            if player_sum == 21:
+                hit = "b"
+                dealer_draw = True
+            elif player_sum > 21:
+                hit = "b"
+                dealer_draw = False
+>>>>>>> origin/main
             else:
                     hit = input("Do you want to hit again?(y/n) ")
                     dealer_draw = True
