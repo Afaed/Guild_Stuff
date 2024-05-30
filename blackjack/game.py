@@ -52,6 +52,7 @@ def calc_sum_and_draw(val: int, hit_card: dict, name: str):
     return score, f"{name} drew a {hit_card.get('rank')} of {hit_card.get('suit')}", f"{name} sum is: {score}", hit_card   
 
 def aces_adjust(hand: list, score: int):
+    #TODO: Change the score so it can be the highest it can be without being greater than 21.
     new_score = 0
     if score > 21:
         for card in hand:
