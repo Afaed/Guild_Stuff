@@ -11,7 +11,7 @@ dealer_hand = []
 #game loop settings
 game_over = False
 game_start = True
-dealer_draw = False
+stay = False
 
 #Program Loop
 
@@ -28,10 +28,10 @@ def winner():
             print("BUST!")
         elif dealer_sum > 21:
             print("Dealer busts! You win!")
-        elif dealer_sum == 21:
-            print("Dealer has blackjack! You lose!")
         elif player_sum == 21:
             print("You win! You have balckjack")
+        elif dealer_sum == 21:
+            print("Dealer has blackjack! You lose!")
         elif dealer_sum > player_sum:
             print("Dealer wins! They have a higher score more than you!")
         elif player_sum > dealer_sum:
@@ -42,15 +42,13 @@ def start_game():
     player_hand.append(deck.pop())
     player_hand.append(deck.pop())
     dealer_hand.append(deck.pop())
-    dealer_hand = [{'suit': "Clubs", "rank": "Ace", "value": 11}, {'suit': "Clubs", "rank": 5, "value": 2}]
     dealer_hand.append(deck.pop())
+    dealer_hand = [{'suit': "Clubs", "rank": "A", "value": 11}, {'suit': "Clubs", "rank": 5, "value": 5}]
     player_sum = player_hand[0].get('value') + player_hand[1].get('value') 
     dealer_sum = dealer_hand[0].get('value') + dealer_hand[1].get('value')
-    print(f"Player has a {player_hand[0].get('rank')} of {player_hand[0].get('suit')} and a {player_hand[1].get('rank')} of {player_hand[1].get('suit')}")
-    print(f"Dealer has a {dealer_hand[0].get('rank')} of {dealer_hand[0].get('suit')} showing")
 
-def calc_sum_and_draw(sum: int, hit_card: dict, name: str):
-    score = sum+hit_card.get('value')
+def calc_sum_and_draw(val: int, hit_card: dict, name: str):
+    score = val+hit_card.get('value')
     return score, f"{name} drew a {hit_card.get('rank')} of {hit_card.get('suit')}", f"{name} sum is: {score}", hit_card   
 
 def aces_adjust(hand: list, score: int):
@@ -62,15 +60,12 @@ def aces_adjust(hand: list, score: int):
     for card in hand:
         new_score += card["value"]
     return new_score
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/main
 deck = []
 card = {}
 
-suits = ['Diamonds', 'Clubs', 'Spades', 'Hearts']
-ranks = {1:'Ace', 11: 'Jack', 12: 'Queen', 13: 'King'}
+suits = ['♠️', '♦️', '♣️', '♥️']
+ranks = {1:'A', 11: 'J', 12: 'Q', 13: 'K'}
 #TODO: Set the 1 to ace and the 11, 12, 13 cards to king, queen, and jack.
 #TODO: Set the values from 11 onwards to 10 
 values= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] 
@@ -91,49 +86,58 @@ for suit in suits:
 
 shuffle_deck()
 
+start_game()
+
 while game_start:
     #Blind bid required: subtract 2 from the player
     #Player sum and dealer sum get gard reset-move this outside of the code
-    start_game()
+    print("Player has a: ")
+    #TODO: Turn this into a function!
+    for card in player_hand:
+        print(f"""        ---- 
+        |{card.get('rank')} |
+        |{card.get('suit')} |
+        ----""")
+
+    print(f"Dealer has a {dealer_hand[0].get('rank')} of {dealer_hand[0].get('suit')} showing.")
     
+    if game_over:
+        winner()
+        restart = input("Do you want to keep going? (y/n)")   
+        if restart.lower().startswith('y'):
+            for i in range (len(player_hand)):
+                deck.append(player_hand.pop())
+            for i in range(len(dealer_hand)):
+                deck.append(dealer_hand.pop())
+            shuffle_deck()
+            stay = False
+            game_over = False
+        else:
+            game_start = False
+            break
+
     if player_hand[0].get('value') + player_hand[1].get('value') == 21:
         game_over = True
-        dealer_draw = True
+        stay = True
         print("You have blackjack!")
     #Delete this line below later
     elif player_hand[0].get('value') + player_hand[1].get('value') > 21:
+        #TODO: Check the order adjustment
+        player_sum = aces_adjust(player_hand, player_sum)
         game_over = True
 
-    if not game_over:    
-        hit = input("Do you want to hit?(y/n) ")
-        
-        while hit.lower() =='Y'.lower():
-            players_info = calc_sum_and_draw(player_sum, deck.pop(), "You")
-            player_sum = players_info[0]
-            player_hand.append(players_info[3])
+    hit = input("Do you want to hit?(y/n) ")
 
-            if player_sum > 21:
-                player_sum = aces_adjust(player_hand, player_sum)
-                
-            print(f"{players_info[1]}\nPlayer sum is {player_sum}")
-<<<<<<< HEAD
-            if player_sum == 21 or player_sum > 21:
-                hit = "b"
-                dealer_draw = True
-=======
-            if player_sum == 21:
-                hit = "b"
-                dealer_draw = True
-            elif player_sum > 21:
-                hit = "b"
-                dealer_draw = False
->>>>>>> origin/main
-            else:
-                    hit = input("Do you want to hit again?(y/n) ")
-                    dealer_draw = True
+    if not hit.lower().startswith('y'):
+        stay = True
         game_over = True
+    else:
+        players_info = calc_sum_and_draw(player_sum, deck.pop(), "You")
+        player_sum = players_info[0]
+        player_hand.append(players_info[3])
+        print(f"{players_info[1]}\nPlayer sum is {player_sum}")   
     
-    if dealer_draw:
+    if stay:
         print(f"Dealer has a {dealer_hand[0].get('rank')} of {dealer_hand[0].get('suit')} and a {dealer_hand[1].get('rank')} of {dealer_hand[1].get('suit')}")
 
         while dealer_sum < 17:
@@ -142,19 +146,5 @@ while game_start:
                 dealer_sum = dealers_info[0]
                 if dealer_sum > 21:
                     dealer_sum = aces_adjust(dealer_hand, dealer_sum)
-                print(f"{dealers_info[1]}\nDealer's sum is: {dealer_sum}")
-
-    if game_over:
-        winner()
-        restart = input("Do you want to keep going? (y/n)")   
-        if restart.lower() == "Y".lower():
-            for i in range (len(player_hand)):
-                deck.append(player_hand.pop())
-            for i in range(len(dealer_hand)):
-                deck.append(dealer_hand.pop())
-            shuffle_deck()
-            dealer_draw = False
-            game_over = False
-        else:
-            game_start = False
-            break
+                print(f"{dealers_info[1]}\nDealer's sum is: {dealer_sum}.")
+        #TODO: set game_over here to be true.
